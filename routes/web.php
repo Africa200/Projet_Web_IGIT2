@@ -22,3 +22,12 @@ Route::post('/restaurant/plat', [RestaurantController::class, 'storePlat']);
 Route::post('/restaurant/type', [RestaurantController::class, 'storeTypeDePlat']);
 Route::delete('/restaurant/plat/{id}', [RestaurantController::class, 'destroyPlat']);
 Route::delete('/restaurant/type/{id}', [RestaurantController::class, 'destroyTypeDePlat']);
+
+use App\Http\Controllers\AuthController;
+
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/register', [AuthController::class, 'showRegisterForm']);
+Route::post('/register', [AuthController::class, 'register']);
+

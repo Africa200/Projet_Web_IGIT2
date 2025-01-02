@@ -14,7 +14,7 @@ class RestaurantController extends Controller
     {
         $plats = Plat::with('TypePlat')->get();
         $types = TypePlat::all();
-        return view('restaurant.index', compact('plats', 'types'));
+        return view('dashboard.dashboard', compact('plats', 'types'));
         //return view('dashboard.dashboard');
     }
 
