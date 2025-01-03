@@ -1,11 +1,22 @@
 @extends('template')
 
 @section('contenue')
+<div>
+    @auth
+      <div>
+          <h1>
+              Hello {{ auth()->user()->name }} 😊
+          </h1>
+      </div>
+    @endauth
+</div>
 <div class="container-fluid my-4"> <!-- Utilisation de `container-fluid` -->
     <div class="row g-3"> <!-- `g-3` ajoute un espacement entre les colonnes et les lignes -->
         @foreach ($plats as $plat)
         <div class="col-md-3"> <!-- Chaque carte occupe un quart de la ligne -->
             <div class="card" style="width: 18rem;">
+
+
                 @if ($plat->photo)
                 <img src="{{ asset('storage/' . $plat->photo) }}" class="card-img-top" alt="Photo de {{ $plat->nom_plat }}">
                 @else
@@ -19,7 +30,7 @@
                         <strong>Type :</strong> {{ $plat->typePlat->nom_type ?? 'Non spécifié' }} <br>
                         <strong>Stock :</strong> {{ $plat->nombre_plat_en_stock }} en stock
                     </p>
-                    <a href="#" class="btn" style="background-color: #ffce00">Ajouter à ma commande</a>
+                    <a href="{{ route('commande.ajouter', $plat) }}" class="btn" style="background-color: #ffce00">Ajouter à ma commande</a>
                 </div>
             </div>
         </div>

@@ -46,8 +46,13 @@
                     </li>
                 </ul>
                 <!-- Bouton "Se connecter" -->
-                <a class="btn btn-dark-custom rounded-pill px-4 ms-3" href="#" role="button">Se connecter</a>
-            </div>
+                @guest
+                <a class="btn btn-dark-custom rounded-pill px-4 ms-3 d-flex align-items-center"
+                   href="{{ url('/login') }}"
+                   role="button">
+                    <i class="bi bi-person me-2"></i> Se connecter
+                </a>
+                @endguest            </div>
         </div>
     </nav>
     <!--
