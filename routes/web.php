@@ -36,4 +36,9 @@ use App\Http\Controllers\CommandeController;
 
 Route::get('/commande/ajouter/{plat}', [CommandeController::class, 'showAddToCommande'])->name('commande.ajouter');
 Route::post('/commande/ajouter/{plat}', [CommandeController::class, 'addToCommande'])->name('commande.ajouter.post');
+Route::get('/mes-commandes', [CommandeController::class, 'index'])->name('commande.index');
+Route::get('/commandes/{commande}', [CommandeController::class, 'show'])->name('commandes.show'); // Visualiser une commande
+Route::post('/commandes/{commande}/annuler', [CommandeController::class, 'annuler'])->name('commandes.annuler'); // Annuler une commande
+Route::post('/commandes/{commande}/valider', [CommandeController::class, 'valider'])->name('commandes.valider'); // Valider une commande
+
 

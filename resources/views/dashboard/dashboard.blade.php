@@ -25,7 +25,9 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $plat->nom_plat }}</h5>
                     <p class="card-text">
+                        <!--
                         <strong>Description :</strong> {{ $plat->description ?? 'Aucune description' }} <br>
+                        -->
                         <strong>Prix :</strong> {{ $plat->prix }} FCFA <br>
                         <strong>Type :</strong> {{ $plat->typePlat->nom_type ?? 'Non spécifié' }} <br>
                         <strong>Stock :</strong> {{ $plat->nombre_plat_en_stock }} en stock

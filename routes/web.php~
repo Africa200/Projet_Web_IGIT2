@@ -16,7 +16,7 @@ use App\Http\Controllers\RestaurantController;
 */
 
 Route::get('/',[\App\Http\Controllers\MainController::class,'index']);
-Route::get('/dashboard', [RestaurantController::class, 'dashboard']);
+Route::get('/dashboard', [RestaurantController::class, 'dashboard'])->name( 'dashboard');
 Route::get('/restaurant', [RestaurantController::class, 'index']);
 Route::post('/restaurant/plat', [RestaurantController::class, 'storePlat']);
 Route::post('/restaurant/type', [RestaurantController::class, 'storeTypeDePlat']);
@@ -36,4 +36,6 @@ use App\Http\Controllers\CommandeController;
 
 Route::get('/commande/ajouter/{plat}', [CommandeController::class, 'showAddToCommande'])->name('commande.ajouter');
 Route::post('/commande/ajouter/{plat}', [CommandeController::class, 'addToCommande'])->name('commande.ajouter.post');
+Route::get('/mes-commandes', [CommandeController::class, 'index'])->name('commande.index');
+
 
