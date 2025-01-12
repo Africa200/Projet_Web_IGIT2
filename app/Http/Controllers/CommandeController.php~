@@ -93,7 +93,7 @@ class CommandeController extends Controller
 
         // decrementer la quantité de stock du plat
         foreach ($plats as $plat) {
-            $plat->nombre_plat_en_stock -= $plat->pivot->quantite;
+            $plat->stock -= $plat->pivot->quantite;
             $plat->save();
         }
         if ($commande->etat !== 'courant') {

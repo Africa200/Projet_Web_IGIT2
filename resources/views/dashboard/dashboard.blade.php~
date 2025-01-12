@@ -25,7 +25,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $plat->nom_plat }}</h5>
                     <p class="card-text">
-                        <!--                         
+                        <!--
                         <strong>Description :</strong> {{ $plat->description ?? 'Aucune description' }} <br>
                         -->
                         <strong>Prix :</strong> {{ $plat->prix }} FCFA <br>

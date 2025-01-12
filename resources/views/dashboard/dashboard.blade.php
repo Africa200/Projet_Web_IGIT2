@@ -10,6 +10,11 @@
       </div>
     @endauth
 </div>
+@if (session('success'))
+<div class="alert alert-success">
+    {{ session('success') }}
+</div>
+@endif
 <div class="container-fluid my-4"> <!-- Utilisation de `container-fluid` -->
     <div class="row g-3"> <!-- `g-3` ajoute un espacement entre les colonnes et les lignes -->
         @foreach ($plats as $plat)

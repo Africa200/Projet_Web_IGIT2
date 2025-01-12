@@ -2,11 +2,6 @@
 
 @section('contenue')
 <div class="container my-5">
-    @if (session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
-    @endif
     <h1>Ajouter {{ $plat->nom_plat }} à votre commande</h1>
     <form action="{{ route('commande.ajouter.post', $plat) }}" method="POST">
         @csrf

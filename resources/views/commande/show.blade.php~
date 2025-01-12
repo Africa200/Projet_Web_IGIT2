@@ -25,21 +25,14 @@
             <td>{{ $plat->nom_plat }}</td>
             <td>{{ $plat->prix }} FCFA</td>
             <td>{{ $plat->pivot->quantite }}</td>
-            <td>
-                @if(isset($remisePrice))
-                <!-- Total normal barré -->
+            @if(isset($remisePrice))
                 <span style="text-decoration: line-through; color: red;">
-            {{ $plat->pivot->quantite * $plat->prix }} FCFA
-        </span>
-                <!-- Total après remise -->
-                <span>
-            {{ ($plat->pivot->quantite * $plat->prix) - $remisePrice }} FCFA
-        </span>
-                @else
-                <!-- Total sans remise -->
-                {{ $plat->pivot->quantite * $plat->prix }} FCFA
-                @endif
-            </td>
+                    <td>{{ $plat->pivot->quantite * $plat->prix}} FCFA</td>
+                </span>
+                    <td>{{ $plat->pivot->quantite * $plat->prix - $remisePrice }} FCFA</td>
+            @else
+                <td>{{ $plat->pivot->quantite * $plat->prix }} FCFA</td>
+            @endif
             @if ($commande->etat === 'courant')
             <td>
                 <!-- Boutons pour augmenter/diminuer les quantités -->
